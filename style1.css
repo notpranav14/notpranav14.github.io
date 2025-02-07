@@ -1,0 +1,106 @@
+/* apply a natural box layout model to all elements,
+but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #7f6065;
+  height: 100vh;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+main {
+  width: 800px;
+  margin: 0 auto;
+  background: #d0bcc3;
+  padding: 50px 40px 60px 40px;
+}
+h1 {
+  color: #4c393c;
+  font-family: 'Sacramento', cursive;
+  font-size: 40px;
+  line-height: 1;
+}
+blockquote p {
+  font-family: 'Sacramento', cursive;
+  font-size: 30px;
+}
+
+
+.heart-pulse {
+  color: 	#fff3f5;
+  display: inline-block;
+  /* animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; */
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { /* starts at half of its size */
+    transform: scale(0.5);
+  }
+  50% { /* halfway point - gets bigger */
+    transform: scale(1.3);
+  }
+  100% { /* scales to its full size */
+    transform: scale(0.5);
+  }
+}
+
+.heart-falling {
+  color: #f44292;
+  position: absolute;
+  animation: falling 6s infinite linear;
+}
+
+.heart-falling:nth-of-type(1) {
+  bottom: 1200px;
+  left: 25%;
+}
+.heart-falling:nth-of-type(2) {
+  bottom: 500px;
+  left: 15%;
+}
+.heart-falling:nth-of-type(3) {
+  bottom: 1000px;
+  left: 50%;
+}
+.heart-falling:nth-of-type(4) {
+  bottom: 475px;
+  left: 80%;
+}
+.heart-falling:nth-of-type(5) {
+  bottom: 600px;
+  left: 40%;
+}
+.heart-falling:nth-of-type(6) {
+  bottom: 1200px;
+  left: 60%;
+}
+
+@keyframes falling {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    bottom: -25px;
+    transform: rotate(-360deg);
+  }
+}
+
+.fa-code {
+  float: right;
+  font-size: 190px !important;
+  color: #EFDEE9;
+}
